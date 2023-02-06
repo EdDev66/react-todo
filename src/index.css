@@ -15,3 +15,25 @@ code {
 .slashed {
   text-decoration: line-through;
 }
+
+.delete-icon {
+  cursor: pointer;
+}
+.delete-icon:hover {
+  color: darkred;
+}
+
+.date-marked {
+  font-size: 13px;
+  color: #888;
+  font-style: italic;
+}
+
+.remove-marked {
+  font-size: 18px;
+}
+
+.remove-marked:hover {
+  color: darkred;
+  cursor: pointer;
+}

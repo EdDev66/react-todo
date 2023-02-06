@@ -3,6 +3,10 @@ import NavbarComponent from '../components/mainScreen/Navbar';
 import TaskInput from '../components/mainScreen/TaskInput';
 import Container from 'react-bootstrap/Container';
 import TaskList from '../components/mainScreen/TaskList';
+import CompletedTaskList from '../components/completedScreen/CompletedTaskList';
+
+import Tab from 'react-bootstrap/Tab';
+import Tabs from 'react-bootstrap/Tabs';
 
 function HomeScreen(props) {
   
@@ -12,7 +16,14 @@ function HomeScreen(props) {
       <Container>
         <h1>ToDo List</h1>
         <TaskInput />
-        <TaskList />
+        <Tabs justify className='mb-4'>
+          <Tab eventKey='Tasks' title='Active Tasks'>
+            <TaskList />
+          </Tab>
+          <Tab eventKey='Completed' title='Completed Tasks'>
+            <CompletedTaskList />
+          </Tab>
+        </Tabs>
       </Container>
     </Fragment>
   )
