@@ -7,8 +7,9 @@ import CompletedTaskList from '../components/completedScreen/CompletedTaskList';
 
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
+import Button  from 'react-bootstrap/Button';
 
-function HomeScreen(props) {
+function HomeScreen() {
   
   return (
     <Fragment>

@@ -37,3 +37,16 @@ code {
   color: darkred;
   cursor: pointer;
 }
+
+.task-checkbox input {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.edit-icon:hover {
+  color: orange;
+  cursor: pointer;
+}

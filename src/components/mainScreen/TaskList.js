@@ -15,9 +15,18 @@ function TaskList() {
   }
 
   return (
+    <>
     <ListGroup variant='flush' className='mt-4'>
-      {tasks.map((item) => <TaskItem title={item.task} key={item.id} id={item.id} marked={item.completed}/>)}
+      {tasks.map((item) => <TaskItem 
+      title={item.task} 
+      key={item.id} 
+      id={item.id} 
+      marked={item.completed}
+      date={item.dueDate}
+      priority={item.priority}
+    />)}
     </ListGroup>
+    </>
   )
 }
 

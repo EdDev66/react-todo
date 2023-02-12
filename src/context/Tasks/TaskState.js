@@ -6,13 +6,15 @@ import {
   REMOVE_TASK,
   MARK_TASK,
   REMOVE_MARKED,
-  GET_TASKS
+  SET_ACTIVE_TASK,
+  EDIT_TASK
 } from '../types';
 
 const TaskState = props => {
   const initialState = {
     tasks: [],
-    completedTasks: []
+    completedTasks: [],
+    activeTask: {}
   }
 
   const [state, dispatch] = useReducer(TaskReducer, initialState);
@@ -59,14 +61,41 @@ const TaskState = props => {
     })
   }
 
+  // SET ACTIVE TASK
+  const setActiveTask = (id) => {
+    const selectedTask = state.tasks.find(el => el.id === id)
+
+    dispatch({
+      type: SET_ACTIVE_TASK,
+      payload: selectedTask
+    })
+  }
+
+  // EDIT TASK
+  const editTask = (task) => {
+    // const selectedTask = state.tasks.find(el => el.id === task.id);
+    // const selectedCopy = selectedTask;
+    // selectedCopy.task = task.task;
+    // selectedCopy.priority = task.priority;
+    // selectedCopy.dueDate = task.dueDate;
+
+    dispatch({
+      type: EDIT_TASK,
+      payload: task
+    })
+  }
+
   return <TaskContext.Provider
     value={{
       tasks: state.tasks,
       completedTasks: state.completedTasks,
+      activeTask: state.activeTask,
       addTask,
       markTask,
       deleteTask,
-      deleteMarked
+      deleteMarked,
+      setActiveTask,
+      editTask
     }}
   >
     {props.children}

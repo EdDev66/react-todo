@@ -3,7 +3,8 @@ import {
   REMOVE_TASK,
   MARK_TASK,
   REMOVE_MARKED,
-  GET_TASKS,
+  SET_ACTIVE_TASK,
+  EDIT_TASK
 } from '../types';
 
 export default (state, action) => {
@@ -30,6 +31,21 @@ export default (state, action) => {
       return {
         ...state,
         completedTasks: action.payload
+      }
+    case SET_ACTIVE_TASK:
+      return {
+        ...state,
+        activeTask: action.payload
+      }
+    case EDIT_TASK:
+      return {
+        ...state,
+        tasks: state.tasks.map(task => {
+          if(task.id === action.payload.id) {
+            return { ...task, ...action.payload }
+          }
+          return task;
+        })
       }
 
     default:
