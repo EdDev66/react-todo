@@ -6,7 +6,6 @@ import TaskContext from '../../context/Tasks/taskContext';
 import TaskPriority from './TaskPriority';
 import Alert from 'react-bootstrap/Alert';
 
-
 function TaskInput() {
 
   const taskContext = useContext(TaskContext);
@@ -41,7 +40,7 @@ function TaskInput() {
     if(taskValue !== '' && priority !== '' && taskDate !== '') {
       addTask({id: taskValue, task: taskValue, completed: false, priority, dueDate: taskDate});
       setTaskValue('');
-      setPriority('')
+      setPriority('');
       setPriorityVisible(false);
     } else {
       handleAlert();

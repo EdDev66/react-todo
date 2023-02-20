@@ -4,3 +4,6 @@ export const MARK_TASK = 'MARK_TASK';
 export const REMOVE_MARKED = 'REMOVE_MARKED';
 export const SET_ACTIVE_TASK = 'SET_ACTIVE_TASK';
 export const EDIT_TASK = 'EDIT_TASK';
+export const LOGIN = 'LOGIN';
+export const REGISTER = 'REGISTER';
+export const LOGOUT = 'LOGOUT'
