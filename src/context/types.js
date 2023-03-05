@@ -1,9 +1,13 @@
 export const ADD_TASK = 'ADD_TASK';
 export const REMOVE_TASK = 'REMOVE_TASK';
 export const MARK_TASK = 'MARK_TASK';
+export const FETCH_TASKS = 'FETCH_TASKS';
+export const FETCH_COMPLETED_TASKS = 'FETCH_COMPLETED_TASKS';
 export const REMOVE_MARKED = 'REMOVE_MARKED';
+export const CLEAR_TASKS = 'CLEAR_TASKS';
 export const SET_ACTIVE_TASK = 'SET_ACTIVE_TASK';
 export const EDIT_TASK = 'EDIT_TASK';
 export const LOGIN = 'LOGIN';
 export const REGISTER = 'REGISTER';
 export const LOGOUT = 'LOGOUT'
+export const ADD_USER = 'ADD_USER';

@@ -8,7 +8,7 @@ import AuthContext from '../../context/Auth/authContext';
 function NavbarComponent() {
   const authContext = useContext(AuthContext);
 
-  const { user, logout } = authContext;
+  const { user, username, logout } = authContext;
 
   const logoutHandler = () => {
     logout();
@@ -18,7 +18,7 @@ function NavbarComponent() {
     <Navbar bg="info" expand="lg" variant='dark' className='mb-5'>
       <Container>
         <Navbar.Brand href="#home">Todoist</Navbar.Brand>
-        {user && <div>Hello, {user}</div>}
+        {username && <div>Hello, {username}</div>}
         <Nav>
           <Nav.Item>
             <Nav.Link as={Link} to='/'>Home</Nav.Link>

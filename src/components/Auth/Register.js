@@ -8,12 +8,13 @@ function Register() {
 
   const [user, setUser] = useState({
     email: '',
+    username: '',
     password: '',
     password2: ''
   })
   const [showAlert, setShowAlert] = useState(false);
 
-  const { email, password, password2 } = user
+  const { email, username, password, password2 } = user
 
   const handleAlert = () => {
     setShowAlert(true)
@@ -29,7 +30,7 @@ function Register() {
   }
 
   const onSubmit = () => {
-    if(email !== '' && password !== '' && password2 !== '')
+    if(email !== '' && password !== '' && password2 !== '' && username !== '')
     authContext.register(user);
     else {
       handleAlert();
@@ -42,6 +43,10 @@ function Register() {
       <Form.Group className="mb-3">
         <Form.Label>Email</Form.Label>
         <Form.Control type="email" placeholder="Email" name='email' required onChange={onChange}/>
+      </Form.Group>
+      <Form.Group className="mb-3">
+        <Form.Label>Username</Form.Label>
+        <Form.Control type="text" placeholder="Username" name='username' required onChange={onChange}/>
       </Form.Group>
      <Form.Group className="mb-3">
         <Form.Label>Password</Form.Label>

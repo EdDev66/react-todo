@@ -16,7 +16,6 @@ function App() {
   return (
     <BrowserRouter>
         <TaskState>
-        {/* <AuthState> */}
         <NavbarComponent />
         <Routes>
           <Fragment>
@@ -25,7 +24,6 @@ function App() {
             <Route path='/register' element={isAuthenticated ? <HomeScreen /> : <Register />}/>
           </Fragment>
         </Routes>
-        {/* </AuthState> */}
         </TaskState>
     </BrowserRouter>
   );

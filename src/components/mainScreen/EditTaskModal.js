@@ -32,7 +32,7 @@ function EditTaskModal(props) {
 
   const updateHandler = () => {
     if(priority !== '' && taskValue !== '' && date !== '') {
-      editTask({ ...activeTask, priority, dueDate: date, task: taskValue })
+      editTask({ ...activeTask, priority: priority, dueDate: date, task: taskValue })
       props.handleClose();
     }
   }

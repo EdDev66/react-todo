@@ -12,7 +12,8 @@ const authReducer = (state = AuthState, action) => {
     case REGISTER:
       return {
         ...state,
-        user: action.payload,
+        user: action.payload.uid,
+        username: action.payload.displayName,
         isAuthenticated: true
       }
     case LOGOUT:

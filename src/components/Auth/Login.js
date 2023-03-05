@@ -29,7 +29,6 @@ function Login() {
   const onSubmit = () => {
     if(email !== '' && password !== '')
     authContext.login(user);
-    
     else {
       handleAlert();
     }

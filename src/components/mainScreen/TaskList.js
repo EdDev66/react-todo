@@ -19,7 +19,8 @@ function TaskList() {
     <ListGroup variant='flush' className='mt-4'>
       {tasks.map((item) => <TaskItem 
       title={item.task} 
-      key={item.id} 
+      key={item.id}
+      userId={item.userId}
       id={item.id} 
       marked={item.completed}
       date={item.dueDate}

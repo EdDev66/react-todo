@@ -2,9 +2,11 @@ import React, { useContext } from 'react';
 import TaskContext from '../../context/Tasks/taskContext';
 import CompletedTaskItem from './CompletedTaskItem';
 import ListGroup from 'react-bootstrap/ListGroup';
+import AuthContext from '../../context/Auth/authContext';
 
 function CompletedTaskList() {
   const taskContext = useContext(TaskContext);
+  const authContext = useContext(AuthContext);
 
   const { completedTasks } = taskContext;
 

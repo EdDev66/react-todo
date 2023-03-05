@@ -2,22 +2,23 @@ import React, { useState, useContext, useEffect } from 'react';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
+import AuthContext from '../../context/Auth/authContext';
 import TaskContext from '../../context/Tasks/taskContext';
 import TaskPriority from './TaskPriority';
 import Alert from 'react-bootstrap/Alert';
 
 function TaskInput() {
 
+  const authContext = useContext(AuthContext);
   const taskContext = useContext(TaskContext);
   const { addTask } = taskContext;
+  const { user } = authContext;
 
   const [taskValue, setTaskValue] = useState('');
   const [taskDate, setTaskDate] = useState('');
   const [priority, setPriority] = useState('');
   const [priorityVisible, setPriorityVisible] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
-
-
 
   const handleChange = (event) => {
     setTaskValue(event.target.value)
@@ -38,7 +39,7 @@ function TaskInput() {
 
   const handleClick = () => {
     if(taskValue !== '' && priority !== '' && taskDate !== '') {
-      addTask({id: taskValue, task: taskValue, completed: false, priority, dueDate: taskDate});
+      addTask({task: taskValue, completed: false, priority, dueDate: taskDate, userId: user}, user);
       setTaskValue('');
       setPriority('');
       setPriorityVisible(false);

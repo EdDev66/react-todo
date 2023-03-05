@@ -3,20 +3,24 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Form from 'react-bootstrap/Form';
 import { FaTrashAlt, FaPencilAlt } from "react-icons/fa";
 import TaskContext from '../../context/Tasks/taskContext';
+import AuthContext from '../../context/Auth/authContext';
 import EditTaskModal from './EditTaskModal';
 
 function TaskItem(props) {
   const taskContext = useContext(TaskContext);
+  const authContext = useContext(AuthContext);
+
   const { markTask, deleteTask, setActiveTask } = taskContext;
+  const { user } = authContext;
 
   const [show, setShow] = useState(false);
 
   const taskCheckHandler = (e) => {
-    markTask(e.target.id)
+    markTask(e.target.id, user)
   }
 
   const taskDeleteHandler = () => {
-    deleteTask(props.id)
+    deleteTask(props.userId, props.id)
   }
 
   // Placeholder

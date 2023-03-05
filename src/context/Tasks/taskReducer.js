@@ -4,7 +4,10 @@ import {
   MARK_TASK,
   REMOVE_MARKED,
   SET_ACTIVE_TASK,
-  EDIT_TASK
+  EDIT_TASK,
+  FETCH_TASKS,
+  CLEAR_TASKS,
+  FETCH_COMPLETED_TASKS
 } from '../types';
 
 export default (state, action) => {
@@ -13,6 +16,21 @@ export default (state, action) => {
       return {
         ...state,
         tasks: [...state.tasks, action.payload]
+      }
+    case CLEAR_TASKS:
+      return {
+        ...state,
+        tasks: []
+      }
+    case FETCH_TASKS:
+      return {
+        ...state,
+        tasks: [...state.tasks, action.payload]
+      }
+    case FETCH_COMPLETED_TASKS:
+      return {
+        ...state,
+        completedTasks: [...state.completedTasks, action.payload]
       }
     case MARK_TASK:
       const filteredTasks = state.tasks.filter(el => el.id !== action.payload.id)

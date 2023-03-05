@@ -1,15 +1,19 @@
 import React, { useContext } from 'react';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { FaTimes } from 'react-icons/fa'
+import AuthContext from '../../context/Auth/authContext';
 import TaskContext from '../../context/Tasks/taskContext';
 
 function CompletedTaskItem(props) {
   const taskContext = useContext(TaskContext)
+  const authContext = useContext(AuthContext)
+
   const { deleteMarked } = taskContext;
+  const { user } = authContext;
 
   const handleClick = (e) => {
-    console.log(e.target.id)
-    deleteMarked(e.target.id)
+    console.log(props.id)
+    deleteMarked(user, props.id)
   }
 
   return (
